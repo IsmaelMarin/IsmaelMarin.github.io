@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Taller</title>
+
+
+  <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <link href="css/heroic-features.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Bienvenido al ejemplo de expresiones regulares</h1>  
+    </header>
+    
+    <div class="row">
+        <div class="col">
+          <h3>Formulario de Login</h3>
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Correo Electrónico</label>
+              <input type="email" id="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo" onkeypress="mail()">
+                          </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" id="pass" class="form-control" id="exampleInputPassword1" placeholder="Password" onkeypress="contra()">
+            </div>
+            <div class="form-check">
+              
+              
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </form>
+        </div>
+        <div class="col">
+          <h3>Expresiones regulares</h3>
+          <h5>Correo Electrónico:</h5>
+          <p>/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i</p>
+          <br>
+          <h5>Contraseña:</h5>
+          <p>/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,30}/</p>
+          <ul>
+            <li>Una mayuscula</li>
+            <li>Un caracter</li>
+            <li>Una minuscula</li>
+            <li>Un número</li>
+          </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+          <h3>Formulario de Datos Personales</h3>
+          <form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">N° de DUI</label>
+    <input type="text" class="form-control"  id="dui" placeholder="12345678-9" onkeypress="duiv()">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">N° de NIT</label>
+    <input type="text" class="form-control" id="nit" placeholder="1245-123456-123-1"
+    onkeypress="nitv()">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Nombre:</label>
+    <input type="text" class="form-control" id="nomb" placeholder="Nombre Apellido"
+    onkeypress="nomb()">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Teléfono celular:</label>
+    <input type="text" class="form-control" id="tel" placeholder="7000-0000"
+    onkeypress="telv()">
+  </div>
+</form>
+        </div>
+        <div class="col">
+          <h3>Expresiones regulares</h3>
+          <h5>N° de DUI:</h5>
+          <p> /^\d{8}-\d{1}$/ | Sigue el formato: 12345678-9</p>
+          <br>
+          <h5>N° de NIT:</h5>
+          <p>/^[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]{1}$/  | Sigue el formato: 1245-123456-123-1</p>
+          <br>
+          <h5>Nombre y Apellido:</h5>
+          <p>Solo debe ser un nombre y un apeliido</p>
+          <br>
+          <h5>Teléfono Celular:</h5>
+          <p>/^[0-9]{4}-[0-9]{4}$/ |  Sigue el formato: 7000-0000 y debe ser celular</p>
+          <br>
+        </div>
+    </div>
+    <br><br>
+ </body>
+ <script type="text/javascript">
+   
+function mail(){
+var email=document.getElementById("email").value;
+emai= /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+   if (emai.test(email)) {
+      document.getElementById("email").style="box-shadow: 2px -2px 153px 5px ";
+      document.getElementById("email").style="border: solid 5px green ";
+   } else {
+      document.getElementById("email").style="box-shadow: 2px -2px 153px 5px rgba(255,0,0,1);";
+   }
+}
+
+function contra(){
+
+  var pass=document.getElementById("pass").value;
+    xd= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,30}/;
+
+   if (xd.test(pass)) {
+      document.getElementById("pass").style="box-shadow: 2px -2px 153px 5px ";
+      document.getElementById("pass").style="border: solid 5px green ";
+   } else {
+     
+   }
+}
+function nomb(){
+var nombre=document.getElementById("nomb").value;
+
+
+   if (!nombre=="") {
+      document.getElementById("nombre").style="box-shadow: 2px -2px 153px 5px ";
+      document.getElementById("nombre").style="border: solid 5px green ";
+   } else {
+      document.getElementById("nombre").style="box-shadow: 2px -2px 153px 5px rgba(255,0,0,1);";
+   }
+}
+
+
+function duiv(){
+
+  var dui=document.getElementById("dui").value;
+    duii= /^\d{8}-\d{1}$/;
+
+   if (duii.test(dui)) {
+      document.getElementById("dui").style="box-shadow: 2px -2px 153px 5px ";
+      document.getElementById("dui").style="border: solid 5px green ";
+   } else {
+      document.getElementById("dui").style="box-shadow: 2px -2px 153px 5px rgba(255,0,0,1);";
+   }
+}
+function nitv(){
+
+  var nit=document.getElementById("nit").value;
+    nitt= /^[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]{1}$/;
+
+   if (nitt.test(nit)) {
+      document.getElementById("nit").style="box-shadow: 2px -2px 153px 5px ";
+      document.getElementById("nit").style="border: solid 5px green ";
+   } else {
+      document.getElementById("nit").style="box-shadow: 2px -2px 153px 5px rgba(255,0,0,1);";
+   }
+}
+function telv(){
+
+  var tel=document.getElementById("tel").value;
+    tell= /^[0-9]{4}-[0-9]{4}$/;
+
+   if (tell.test(tel)) {
+      document.getElementById("tel").style="box-shadow: 2px -2px 153px 5px ";
+      document.getElementById("tel").style="border: solid 5px green ";
+   } else {
+      document.getElementById("tel").style="box-shadow: 2px -2px 153px 5px rgba(255,0,0,1);";
+   }
+}
+
+
+
+ </script>
+ </html>
